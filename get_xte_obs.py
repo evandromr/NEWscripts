@@ -14,9 +14,9 @@ def download_xte_obs(obsid, user='anonymous', passwd='anonymous@server.com'):
     ----------
     obsid: str
         Observation ID to download
-    user: str
+    user: str, optional
         User name for ftp connection. default is 'anonymous'
-    passwd: str
+    passwd: str, optional
         Password for ftp connection. default is 'anonymous@server.com'
 
     Returns
@@ -28,11 +28,19 @@ def download_xte_obs(obsid, user='anonymous', passwd='anonymous@server.com'):
     The observation will be saved as  <obsid>.tar.gz file in the current directory
 
     The default password is a dummy e-mail adress, HEASARC asks users to use their
-    own e-mail as password, please provide your real e-mail when downloading.
+    own e-mail as password, please provide your real e-mail when downloading. (See examples below).
 
     Examples
     --------
-    1. - Downloading as username
+    1. As a command line tool: Downloading as anonymous
+    
+    $ get_xte_obs.py 5081-02-56-98 -p username@mail.com
+    
+    2. As a command line tool: Downloading as username
+    
+    $ get_xte_obs.py 5081-02-56-98 -u username -p username@mail.com
+    
+    1. - Inside a python script: Downloading as username
 
     >>> from get_xte_obs import download_xte_obs
     >>> obsid = '95081-02-56-98'
@@ -40,7 +48,7 @@ def download_xte_obs(obsid, user='anonymous', passwd='anonymous@server.com'):
     >>> my_password = '1234'
     >>> download_xte_obs(obsid, my_user, my_password)
 
-    2. - Downloading as anonymous
+    2. - Inside a python script: Downloading as anonymous
          Username is `anonymous` by default, your e-mail is the password
    
     >>> from get_xte_obs import download_xte_obs
