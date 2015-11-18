@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+"""
+    A collection of simple tools to deal with gziped files
+    Author: Evandro M. Ribeiro <ribeiro .at. astro.rug.nl>
+    Last updated: 18 Nov 2015 by Author
+"""
 import gzip
 import os
 import argparse
