@@ -19,7 +19,7 @@ def gunzip_this(filename):
 
     RETURNS
     -------
-    None: None
+    True: boolean
 
     NOTES
     -----
@@ -37,8 +37,7 @@ def gunzip_this(filename):
 
     assert os.path.isfile(filename.split(".gz")[0]), "Something went wrong!!"
 
-    print("File sucessfully decompressed")
-
+    return True
 
 def gzip_this(filename):
     """
@@ -53,7 +52,7 @@ def gzip_this(filename):
 
     RETURNS
     -------
-    None: None
+    True: boolean
 
     NOTES
     -----
@@ -71,8 +70,8 @@ def gzip_this(filename):
 
     assert os.path.isfile(filename+".gz"), 'Something went wrong!!'
 
-    print("File sucessfully compressed")
-
+    return True
+    
 
 if __name__ == "__main__":
 
@@ -93,9 +92,11 @@ if __name__ == "__main__":
               "Please, run this script again with only one flag -c or -d\n"
               "run gziptools.py -h for help\n")
     elif args.decompress:
-        gunzip_this(args.filename)
+        if gunzip_this(args.filename):
+            print("File sucessfully decompressed")
     elif args.compress:
-        gzip_this(args.filename)
+        if gzip_this(args.filename):
+            print("File sucessfully compressed")
     else:
         print("\nNo method chosen!!\n"
               "Please run this script again with The flags -d OR -c\n"
