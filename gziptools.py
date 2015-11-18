@@ -39,8 +39,6 @@ def gunzip_this(filename):
 
     print("File sucessfully decompressed")
 
-    return None
-
 
 def gzip_this(filename):
     """
@@ -74,8 +72,6 @@ def gzip_this(filename):
     assert os.path.isfile(filename+".gz"), 'Something went wrong!!'
 
     print("File sucessfully compressed")
-
-    return None
 
 
 if __name__ == "__main__":

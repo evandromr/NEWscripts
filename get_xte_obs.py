@@ -94,8 +94,6 @@ def download_xte_obs(obsid, user='anonymous', passwd='anonymous@server.com'):
     # quit FTP connection
     ftp.quit()
 
-    return None
-
 
 if __name__ == "__main__":
 
