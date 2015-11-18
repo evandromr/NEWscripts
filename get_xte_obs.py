@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+"""A simple tool to download an RXTE observation from the HEASARC archive
+   Author: Evandro M. Ribeiro <ribeiro .at. astro.rug.nl>
+   Last updated: 18 Nov 2015 by Author
+"""
 import argparse
 from ftplib import FTP
 
@@ -9,6 +13,9 @@ def download_xte_obs(obsid, user='anonymous', passwd='anonymous@server.com'):
     download_xte_obs(obsid, user='anonymous', passwd='anonymous@server.com')
 
     Download a RXTE observation from HEASARC archive via FTP
+    The function identifies the location of the observation's files by the 
+    number of the obseration ID and download all the files as a compressed
+    *tar.gz file
 
     Parameters
     ----------
